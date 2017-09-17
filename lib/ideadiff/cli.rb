@@ -1,3 +1,5 @@
+require 'ripper'
+
 module Ideadiff
   class Cli
     def initialize(args)
@@ -8,7 +10,7 @@ module Ideadiff
     def exec
       text = show('HEAD~', 'Gemfile')
       return 1 unless $?.success?
-      puts text
+      p Ripper.sexp(text)
       0
     end
 
