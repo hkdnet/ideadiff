@@ -1,0 +1,8 @@
+#! /usr/bin/env ruby
+
+require 'ideadiff'
+
+cli = Ideadiff::Cli.new(ARGV.dup)
+status = cli.exec
+
+exit status
